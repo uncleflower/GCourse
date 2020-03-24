@@ -9,28 +9,33 @@
 import UIKit
 
 class HomePageController: UITableViewController {
-//    @IBOutlet weak var mooc: UIImageView!
-//    @IBOutlet weak var bilibili: UIImageView!
-//    @IBOutlet weak var csdn: UIImageView!
-//    @IBOutlet weak var github: UIImageView!
-//    @IBOutlet weak var stack: UIImageView!
-//    @IBOutlet weak var jiaoben: UIImageView!
-//    @IBOutlet weak var xuexi: UIImageView!
-//    @IBOutlet weak var maizi: UIImageView!
-//    @IBOutlet weak var jike: UIImageView!
+    @IBOutlet weak var mooc: UIImageView!
+    @IBOutlet weak var bilibili: UIImageView!
+    @IBOutlet weak var csdn: UIImageView!
+    @IBOutlet weak var github: UIImageView!
+    @IBOutlet weak var stack: UIImageView!
+    @IBOutlet weak var jiaoben: UIImageView!
+    @IBOutlet weak var xuexi: UIImageView!
+    @IBOutlet weak var maizi: UIImageView!
+    @IBOutlet weak var jike: UIImageView!
+    
+    
+    @IBAction func moocTap(_ sender: Any) {
+        print("tapped")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad() 
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(yourWeb(tap:)))
-//        mooc.addGestureRecognizer(tap)
-//        bilibili.addGestureRecognizer(tap)
-//        csdn.addGestureRecognizer(tap)
-//        github.addGestureRecognizer(tap)
-//        stack.addGestureRecognizer(tap)
-//        jiaoben.addGestureRecognizer(tap)
-//        xuexi.addGestureRecognizer(tap)
-//        maizi.addGestureRecognizer(tap)
-//        jike.addGestureRecognizer(tap)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(yourWeb(tap:)))
+        mooc.addGestureRecognizer(tap)
+        bilibili.addGestureRecognizer(tap)
+        csdn.addGestureRecognizer(tap)
+        github.addGestureRecognizer(tap)
+        stack.addGestureRecognizer(tap)
+        jiaoben.addGestureRecognizer(tap)
+        xuexi.addGestureRecognizer(tap)
+        maizi.addGestureRecognizer(tap)
+        jike.addGestureRecognizer(tap)
         
     }
     
@@ -60,11 +65,12 @@ class HomePageController: UITableViewController {
         }
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
+        print("tapped")
     }
 
     // MARK: - Table view data source
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
