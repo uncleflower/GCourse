@@ -7,27 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4011FC342412322D0062949B /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011FC332412322D0062949B /* CourseViewController.swift */; };
+		4011FC37241233DD0062949B /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011FC36241233DD0062949B /* CourseCell.swift */; };
+		4011FC3B2412366A0062949B /* CourseWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011FC3A2412366A0062949B /* CourseWebController.swift */; };
+		404BD67524192836001219F2 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BD67424192836001219F2 /* HomePageController.swift */; };
+		404BD677241A326F001219F2 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BD676241A326F001219F2 /* PageViewController.swift */; };
+		404BD683241A5A63001219F2 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BD682241A5A63001219F2 /* ErrorViewController.swift */; };
 		406D831A2411FCAC002EDDC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D83192411FCAC002EDDC1 /* AppDelegate.swift */; };
 		406D831C2411FCAC002EDDC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D831B2411FCAC002EDDC1 /* SceneDelegate.swift */; };
-		406D831E2411FCAC002EDDC1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D831D2411FCAC002EDDC1 /* FirstViewController.swift */; };
-		406D83202411FCAC002EDDC1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D831F2411FCAC002EDDC1 /* SecondViewController.swift */; };
 		406D83232411FCAC002EDDC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 406D83212411FCAC002EDDC1 /* Main.storyboard */; };
 		406D83262411FCAC002EDDC1 /* OnlineStudying.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 406D83242411FCAC002EDDC1 /* OnlineStudying.xcdatamodeld */; };
 		406D83282411FCAE002EDDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406D83272411FCAE002EDDC1 /* Assets.xcassets */; };
 		406D832B2411FCAE002EDDC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 406D83292411FCAE002EDDC1 /* LaunchScreen.storyboard */; };
+		406D83362411FDB1002EDDC1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D83352411FDB1002EDDC1 /* User.swift */; };
+		406D83382411FF24002EDDC1 /* CourseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D83372411FF24002EDDC1 /* CourseCollection.swift */; };
+		406D833C24120B2F002EDDC1 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D833B24120B2F002EDDC1 /* UserViewController.swift */; };
+		4075F5F724121FA000E8845A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4075F5F624121FA000E8845A /* LogInViewController.swift */; };
+		A5766E7678317BA273018CB2 /* Pods_OnlineStudying.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852A140332BD6D495607D647 /* Pods_OnlineStudying.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4011FC332412322D0062949B /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
+		4011FC36241233DD0062949B /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		4011FC3A2412366A0062949B /* CourseWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseWebController.swift; sourceTree = "<group>"; };
+		404BD67424192836001219F2 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
+		404BD676241A326F001219F2 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		404BD682241A5A63001219F2 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		406D83162411FCAC002EDDC1 /* OnlineStudying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineStudying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		406D83192411FCAC002EDDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		406D831B2411FCAC002EDDC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		406D831D2411FCAC002EDDC1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		406D831F2411FCAC002EDDC1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		406D83222411FCAC002EDDC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		406D83252411FCAC002EDDC1 /* OnlineStudying.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnlineStudying.xcdatamodel; sourceTree = "<group>"; };
 		406D83272411FCAE002EDDC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		406D832A2411FCAE002EDDC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		406D832C2411FCAE002EDDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		406D83352411FDB1002EDDC1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		406D83372411FF24002EDDC1 /* CourseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCollection.swift; sourceTree = "<group>"; };
+		406D833B24120B2F002EDDC1 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		4075F5F624121FA000E8845A /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		852A140332BD6D495607D647 /* Pods_OnlineStudying.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineStudying.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB46B4F31616399107CAB43 /* Pods-OnlineStudying.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineStudying.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnlineStudying/Pods-OnlineStudying.debug.xcconfig"; sourceTree = "<group>"; };
+		D524616B25B353204C30F482 /* Pods-OnlineStudying.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineStudying.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnlineStudying/Pods-OnlineStudying.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +55,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5766E7678317BA273018CB2 /* Pods_OnlineStudying.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4011FC35241233B70062949B /* UserController */ = {
+			isa = PBXGroup;
+			children = (
+				406D833B24120B2F002EDDC1 /* UserViewController.swift */,
+				4075F5F624121FA000E8845A /* LogInViewController.swift */,
+			);
+			path = UserController;
+			sourceTree = "<group>";
+		};
+		4011FC38241233E30062949B /* CourseController */ = {
+			isa = PBXGroup;
+			children = (
+				4011FC332412322D0062949B /* CourseViewController.swift */,
+				4011FC36241233DD0062949B /* CourseCell.swift */,
+				4011FC3A2412366A0062949B /* CourseWebController.swift */,
+				404BD682241A5A63001219F2 /* ErrorViewController.swift */,
+			);
+			path = CourseController;
+			sourceTree = "<group>";
+		};
+		4011FC39241236310062949B /* HomePageController */ = {
+			isa = PBXGroup;
+			children = (
+				404BD67424192836001219F2 /* HomePageController.swift */,
+				404BD676241A326F001219F2 /* PageViewController.swift */,
+			);
+			path = HomePageController;
+			sourceTree = "<group>";
+		};
 		406D830D2411FCAC002EDDC1 = {
 			isa = PBXGroup;
 			children = (
 				406D83182411FCAC002EDDC1 /* OnlineStudying */,
 				406D83172411FCAC002EDDC1 /* Products */,
+				59F56C01E8F3FED3F58AEBC3 /* Pods */,
+				9E723ED0517FB06C2ACC62F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,17 +112,61 @@
 		406D83182411FCAC002EDDC1 /* OnlineStudying */ = {
 			isa = PBXGroup;
 			children = (
-				406D83192411FCAC002EDDC1 /* AppDelegate.swift */,
-				406D831B2411FCAC002EDDC1 /* SceneDelegate.swift */,
-				406D831D2411FCAC002EDDC1 /* FirstViewController.swift */,
-				406D831F2411FCAC002EDDC1 /* SecondViewController.swift */,
-				406D83212411FCAC002EDDC1 /* Main.storyboard */,
-				406D83272411FCAE002EDDC1 /* Assets.xcassets */,
-				406D83292411FCAE002EDDC1 /* LaunchScreen.storyboard */,
+				406D83342411FDA3002EDDC1 /* Model */,
+				406D83322411FD91002EDDC1 /* Controller */,
+				406D83332411FD99002EDDC1 /* View */,
 				406D832C2411FCAE002EDDC1 /* Info.plist */,
 				406D83242411FCAC002EDDC1 /* OnlineStudying.xcdatamodeld */,
 			);
 			path = OnlineStudying;
+			sourceTree = "<group>";
+		};
+		406D83322411FD91002EDDC1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				406D83192411FCAC002EDDC1 /* AppDelegate.swift */,
+				406D831B2411FCAC002EDDC1 /* SceneDelegate.swift */,
+				4011FC39241236310062949B /* HomePageController */,
+				4011FC38241233E30062949B /* CourseController */,
+				4011FC35241233B70062949B /* UserController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		406D83332411FD99002EDDC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				406D83212411FCAC002EDDC1 /* Main.storyboard */,
+				406D83272411FCAE002EDDC1 /* Assets.xcassets */,
+				406D83292411FCAE002EDDC1 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		406D83342411FDA3002EDDC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				406D83352411FDB1002EDDC1 /* User.swift */,
+				406D83372411FF24002EDDC1 /* CourseCollection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59F56C01E8F3FED3F58AEBC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADB46B4F31616399107CAB43 /* Pods-OnlineStudying.debug.xcconfig */,
+				D524616B25B353204C30F482 /* Pods-OnlineStudying.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9E723ED0517FB06C2ACC62F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				852A140332BD6D495607D647 /* Pods_OnlineStudying.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 406D832F2411FCAE002EDDC1 /* Build configuration list for PBXNativeTarget "OnlineStudying" */;
 			buildPhases = (
+				FEFC0DFA39CF2AE80A1D10D8 /* [CP] Check Pods Manifest.lock */,
 				406D83122411FCAC002EDDC1 /* Sources */,
 				406D83132411FCAC002EDDC1 /* Frameworks */,
 				406D83142411FCAC002EDDC1 /* Resources */,
+				7B09F6621C478CD9735E590D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,15 +237,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7B09F6621C478CD9735E590D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OnlineStudying/Pods-OnlineStudying-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnlineStudying/Pods-OnlineStudying-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEFC0DFA39CF2AE80A1D10D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineStudying-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		406D83122411FCAC002EDDC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				406D83202411FCAC002EDDC1 /* SecondViewController.swift in Sources */,
-				406D831E2411FCAC002EDDC1 /* FirstViewController.swift in Sources */,
+				4011FC3B2412366A0062949B /* CourseWebController.swift in Sources */,
+				406D833C24120B2F002EDDC1 /* UserViewController.swift in Sources */,
+				404BD683241A5A63001219F2 /* ErrorViewController.swift in Sources */,
+				4075F5F724121FA000E8845A /* LogInViewController.swift in Sources */,
+				4011FC342412322D0062949B /* CourseViewController.swift in Sources */,
+				404BD67524192836001219F2 /* HomePageController.swift in Sources */,
+				4011FC37241233DD0062949B /* CourseCell.swift in Sources */,
+				406D83362411FDB1002EDDC1 /* User.swift in Sources */,
 				406D83262411FCAC002EDDC1 /* OnlineStudying.xcdatamodeld in Sources */,
 				406D831A2411FCAC002EDDC1 /* AppDelegate.swift in Sources */,
+				404BD677241A326F001219F2 /* PageViewController.swift in Sources */,
+				406D83382411FF24002EDDC1 /* CourseCollection.swift in Sources */,
 				406D831C2411FCAC002EDDC1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,9 +435,11 @@
 		};
 		406D83302411FCAE002EDDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB46B4F31616399107CAB43 /* Pods-OnlineStudying.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DVKY3N289Q;
 				INFOPLIST_FILE = OnlineStudying/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,9 +454,11 @@
 		};
 		406D83312411FCAE002EDDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D524616B25B353204C30F482 /* Pods-OnlineStudying.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DVKY3N289Q;
 				INFOPLIST_FILE = OnlineStudying/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
