@@ -38,13 +38,14 @@ class CourseViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "course", for: indexPath) as! CourseCell
         cell.courseImage.image = user.collections[indexPath.row].courseImage
         cell.courseNameLabel.text = user.collections[indexPath.row].courseName
-
+        cell.courseSchoolLabel.text = user.collections[indexPath.row].courseSchool
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc = sb.instantiateViewController(identifier: "courseWeb") as! CourseWebController
+        let vc = sb.instantiateViewController(identifier: COURSE_WEB) as! CourseWebController
         vc.modalPresentationStyle = .fullScreen
         vc.url = user.collections[indexPath.row].url
         present(vc, animated: true, completion: nil)

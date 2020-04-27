@@ -104,7 +104,7 @@ extension PageViewController {
     @objc func handleTap1(tap:UITapGestureRecognizer) {
         if tap.state == .ended {
             let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-            let vc = sb.instantiateViewController(identifier: "courseWeb") as! CourseWebController
+            let vc = sb.instantiateViewController(identifier: COURSE_WEB) as! CourseWebController
             vc.modalPresentationStyle = .fullScreen
             vc.url = "https://kaoyan.icourse163.org/course/terms/1451978488.htm?courseId=1451544229"
             present(vc, animated: true, completion: nil)
@@ -113,7 +113,7 @@ extension PageViewController {
     @objc func handleTap2(tap:UITapGestureRecognizer) {
         if tap.state == .ended {
             let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-            let vc = sb.instantiateViewController(identifier: "courseWeb") as! CourseWebController
+            let vc = sb.instantiateViewController(identifier: COURSE_WEB) as! CourseWebController
             vc.modalPresentationStyle = .fullScreen
             vc.url = "https://www.icourse163.org/live/view/480000001995601.htm?_trace_c_p_k2_=32cecccf433b4dd58c4abce716390a6d"
             present(vc, animated: true, completion: nil)
@@ -122,7 +122,7 @@ extension PageViewController {
     @objc func handleTap3(tap:UITapGestureRecognizer) {
         if tap.state == .ended {
             let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-            let vc = sb.instantiateViewController(identifier: "courseWeb") as! CourseWebController
+            let vc = sb.instantiateViewController(identifier: COURSE_WEB) as! CourseWebController
             vc.modalPresentationStyle = .fullScreen
             vc.url = "https://www.icourse163.org/topics/gongkaoKY_w"
             present(vc, animated: true, completion: nil)

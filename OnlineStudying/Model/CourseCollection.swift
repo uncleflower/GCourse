@@ -11,5 +11,6 @@ import UIKit
 struct CourseCollection {
     var courseName: String
     var courseImage: UIImage
+    var courseSchool: String
     var url: String
 }

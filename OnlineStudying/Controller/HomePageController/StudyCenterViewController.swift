@@ -47,7 +47,7 @@ class StudyCenterViewController: UIViewController {
         
         if let stackView = tap.view {
             let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let vc = sb.instantiateViewController(identifier: "courseWeb") as! CourseWebController
+            let vc = sb.instantiateViewController(identifier: COURSE_WEB) as! CourseWebController
             
             if stackView.restorationIdentifier == "mooc" {
                 vc.url = "https://www.icourse163.org"
@@ -71,7 +71,6 @@ class StudyCenterViewController: UIViewController {
             
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
-            print("tapped")
         }
         
         

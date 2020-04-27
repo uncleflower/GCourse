@@ -23,6 +23,7 @@
 		406D83382411FF24002EDDC1 /* CourseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D83372411FF24002EDDC1 /* CourseCollection.swift */; };
 		406D833C24120B2F002EDDC1 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D833B24120B2F002EDDC1 /* UserViewController.swift */; };
 		4075F5F724121FA000E8845A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4075F5F624121FA000E8845A /* LogInViewController.swift */; };
+		4088D16A2456BF2A00C9360B /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4088D1692456BF2A00C9360B /* constant.swift */; };
 		40E33AC3242DFF220042B35E /* StudyCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E33AC2242DFF220042B35E /* StudyCenterViewController.swift */; };
 		40E33AC5242E02860042B35E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E33AC4242E02860042B35E /* WebKit.framework */; };
 		A5766E7678317BA273018CB2 /* Pods_OnlineStudying.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852A140332BD6D495607D647 /* Pods_OnlineStudying.framework */; };
@@ -47,6 +48,7 @@
 		406D83372411FF24002EDDC1 /* CourseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCollection.swift; sourceTree = "<group>"; };
 		406D833B24120B2F002EDDC1 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		4075F5F624121FA000E8845A /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		4088D1692456BF2A00C9360B /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		40E33AC2242DFF220042B35E /* StudyCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCenterViewController.swift; sourceTree = "<group>"; };
 		40E33AC4242E02860042B35E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		852A140332BD6D495607D647 /* Pods_OnlineStudying.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineStudying.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 		406D83182411FCAC002EDDC1 /* OnlineStudying */ = {
 			isa = PBXGroup;
 			children = (
+				4088D1682456BF0300C9360B /* CONSTANT */,
 				406D83342411FDA3002EDDC1 /* Model */,
 				406D83322411FD91002EDDC1 /* Controller */,
 				406D83332411FD99002EDDC1 /* View */,
@@ -156,6 +159,14 @@
 				406D83372411FF24002EDDC1 /* CourseCollection.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4088D1682456BF0300C9360B /* CONSTANT */ = {
+			isa = PBXGroup;
+			children = (
+				4088D1692456BF2A00C9360B /* constant.swift */,
+			);
+			path = CONSTANT;
 			sourceTree = "<group>";
 		};
 		59F56C01E8F3FED3F58AEBC3 /* Pods */ = {
@@ -293,6 +304,7 @@
 				404BD683241A5A63001219F2 /* ErrorViewController.swift in Sources */,
 				4075F5F724121FA000E8845A /* LogInViewController.swift in Sources */,
 				4011FC342412322D0062949B /* CourseViewController.swift in Sources */,
+				4088D16A2456BF2A00C9360B /* constant.swift in Sources */,
 				404BD67524192836001219F2 /* HomePageController.swift in Sources */,
 				4011FC37241233DD0062949B /* CourseCell.swift in Sources */,
 				406D83362411FDB1002EDDC1 /* User.swift in Sources */,
