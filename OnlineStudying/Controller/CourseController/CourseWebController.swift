@@ -8,10 +8,19 @@
 
 import UIKit
 import WebKit
+import RealmSwift
 
 class CourseWebController: UIViewController {
     var url: String = ""
     var spinner: UIActivityIndicatorView!
+        
+    var button = UIButton()
+    
+    //点击收藏的Url
+    var urlStr = ""
+    
+    //圆圈的位置
+    var startCenter = CGPoint.zero
     
     var webView: WKWebView!
     
@@ -24,6 +33,7 @@ class CourseWebController: UIViewController {
         webView.uiDelegate = self
         webView.navigationDelegate = self //就是LoadDelegate
         view = webView
+        
     }
     
     
@@ -31,8 +41,21 @@ class CourseWebController: UIViewController {
         super.viewDidLoad()
         setSpinner()
         webView.load(URLRequest(url: URL(string: url)!))
-        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(pinch:)))
-        view.addGestureRecognizer(pinch)
+        
+        button.tintColor = .gray
+        let rect = CGRect(x: 10, y: 55, width: 55, height: 55)
+        button.frame = rect
+        let image = UIImage(systemName: "smallcircle.circle.fill")
+        button.setBackgroundImage(image, for: .normal)
+        button.addTarget(self, action: #selector(collect), for: .touchUpInside)
+        button.alpha = 0.7
+        view.addSubview(button)
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(longPress:)))
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(pan:)))
+        button.addGestureRecognizer(pan)
+        button.addGestureRecognizer(longPress)
+        
     }
     
     func setSpinner() {
@@ -48,9 +71,84 @@ class CourseWebController: UIViewController {
         spinner.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
     
-    @objc func handlePinch(pinch: UIPinchGestureRecognizer) {
-        if pinch.state == .began || pinch.state == .changed {
+    @objc func collect() {
+        print("Pressed")
+        
+        guard status![0].isLoggedIn == true else {
+            let alert = UIAlertController(title: "登录", message: "请登录后再收藏课程", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
+
+            present(alert, animated: true, completion: nil)
+
+            return
+        }
+        
+        let alert = UIAlertController(title: "你要收藏该页面吗", message: "你要收藏该页面吗，确定后该页面会被收藏在<我的学习>中", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "为该页面命名"
+        }
+        
+        let okAction = UIAlertAction(title: "确定", style: .default) { (_) in
+            let textField = alert.textFields![0]
+            if textField.text!.isBlank {
+                let error = UIAlertController(title: "错误", message: "命名不能为空！", preferredStyle: .alert)
+                error.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
+                self.present(error, animated: true, completion: nil)
+            } else {
+                
+                let course = Course()
+                course.courseName = textField.text!
+                course.url = self.urlStr
+                course.account = status![0].currentAccount
+                
+                
+                // 本地数据存储
+                saveCourse(course: course)
+            }
+            
+
+            print("urlStr" + self.urlStr)
+            
+            
+            
+            
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func handlePan(pan: UIPanGestureRecognizer) {
+        let translation = pan.translation(in: button.superview)
+        
+        if pan.state == .began {
+            startCenter = button.center
+        }
+        
+        if pan.state != .cancelled {
+            button.center = CGPoint(x: startCenter.x + translation.x,y: startCenter.y + translation.y)
+        }
+    }
+    
+    @objc func handleLongPress(longPress: UILongPressGestureRecognizer) {
+        if longPress.state == .began {
             dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func getUrl() {
+        //js注入，获得正在访问的页面的url
+        self.webView.evaluateJavaScript("window.location.href") { (res, error) in
+            if let res = res {
+                print(res)
+                self.urlStr = res as! String
+            } else {
+                print("none")
+            }
         }
     }
 
@@ -63,6 +161,17 @@ class CourseWebController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+//    获得正在访问的URL
+//    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
+//
+//        if let urlStr = navigationAction.request.url?.absoluteString {
+//            self.urlStr = urlStr
+//
+//        }
+//        decisionHandler(.allow, .init())
+//    }
+    
 
 }
 
@@ -108,6 +217,8 @@ extension CourseWebController:WKNavigationDelegate {
         print(#function)
         spinner.stopAnimating()
         spinner.removeFromSuperview()
+        
+        getUrl()
     }
     
     //接收失败
@@ -154,3 +265,4 @@ extension CourseWebController: WKUIDelegate {
         present(alert, animated: true, completion: nil)
     }
 }
+

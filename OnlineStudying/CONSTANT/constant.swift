@@ -1,4 +1,35 @@
 import Foundation
+import UIKit
+import RealmSwift
 
 
 let COURSE_WEB = "courseWeb"
+
+var headImage = UIImage(systemName: "person.circle")
+
+var users: Results<User>?
+var user:User!
+
+var collections: Results<Course>?
+
+var defaults = UserDefaults.standard
+
+var statu = Status()
+var status:Results<Status>?
+
+
+//var isLoggedIn = false
+//var currentAccount = user.account
+
+
+
+
+
+extension String {
+    var isBlank:Bool {
+        let trimmedStr = self.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmedStr.isEmpty
+    }
+}
+
+

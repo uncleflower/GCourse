@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import RealmSwift
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let urlStr = ""
+    
+        AF.request(urlStr).responseJSON { (response) in
+            switch response.result {
+            case .success(let json):
+                print(json)
+                break
+            case .failure(let error):
+                print("error:\(error)")
+                break
+            }
+        }
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+        users = realm.objects(User.self)
+        status = realm.objects(Status.self)
+        
+        if(status?.count == 0) {
+            saveStatus(status: statu)
+        }
+        
+        if(status![0].isLoggedIn == true) {
+            users = realm.objects(User.self).filter("account = \(status![0].currentAccount)")
+            collections = realm.objects(Course.self).filter("account = \(status![0].currentAccount)")
+            user = users![0]
+        } else {
+            user = User()
+        }
+        
         return true
     }
 

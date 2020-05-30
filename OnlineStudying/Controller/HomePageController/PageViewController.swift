@@ -88,11 +88,15 @@ extension PageViewController {
     func goToNextPage() {
         guard let currentViewController = self.viewControllers?.first else {return}
         guard let nextViewController = dataSource?.pageViewController( self, viewControllerAfter: currentViewController ) else { return }
-        UIView.animate(withDuration: 2) {
-            self.setViewControllers([nextViewController], direction: .forward, animated: false, completion: nil)
+        
+        UIView.animate(withDuration: 1) {
+            self.setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
         }
         
-        delay(seconds: 2) {
+        pendingIndex = pages.firstIndex(of: nextViewController)!
+        pageControl.currentPage = pendingIndex
+        
+        delay(seconds: 5) {
             self.goToNextPage()
         }
     }

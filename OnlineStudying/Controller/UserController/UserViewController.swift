@@ -15,7 +15,13 @@ class UserViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headPortraitImage.image = user.headPortrait
+        headPortraitImage.image = headImage
+        userNameLabel.text = user.userName
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        headPortraitImage.image = headImage
         userNameLabel.text = user.userName
     }
 
@@ -23,6 +29,56 @@ class UserViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 2 && indexPath.row == 0{
+            
+            guard status![0].isLoggedIn == true else {
+                let alert = UIAlertController(title: "登录", message: "您还没登录呢", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            let alert = UIAlertController(title: "退出", message: "确定要退出登录吗？", preferredStyle: .alert)
+            let yes = UIAlertAction(title: "确定", style: .destructive) { (_) in
+                do {
+                    try realm.write {
+                        status![0].isLoggedIn = false
+                        status![0].currentAccount = 0
+                    }
+                } catch {
+                    print(error)
+                }
+                
+                user = User()
+                collections = realm.objects(Course.self).filter("account == 0")
+                self.userNameLabel.text = user.userName
+//                tableView.reloadData()
+            }
+            let no = UIAlertAction(title: "取消", style: .default, handler: nil)
+            
+            alert.addAction(yes)
+            alert.addAction(no)
+            
+//            present(alert, animated: true, completion: nil)
+            present(alert, animated: true) {
+                tableView.reloadSections([0], with: .none)
+            }
+        }
+        
+        if indexPath.section == 0 && indexPath.row == 0 {
+            guard status![0].isLoggedIn == false else {
+                let alert = UIAlertController(title: "错误", message: "您已登录，请退出登录后再切换用户", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+            let vc = sb.instantiateViewController(identifier: "logIn") as! LogInViewController
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
     }
     
 

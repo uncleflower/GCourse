@@ -51,6 +51,7 @@ class StudyCenterViewController: UIViewController {
             
             if stackView.restorationIdentifier == "mooc" {
                 vc.url = "https://www.icourse163.org"
+//                vc.url = "http://www.icourses.cn/home/"
             } else if stackView.restorationIdentifier == "bilibili" {
                 vc.url = "https://www.bilibili.com"
             } else if stackView.restorationIdentifier == "csdn" {
@@ -60,13 +61,15 @@ class StudyCenterViewController: UIViewController {
             } else if stackView.restorationIdentifier == "stack" {
                 vc.url = "https://stackoverflow.com"
             } else if stackView.restorationIdentifier == "jiaoben" {
-                vc.url = "https://www.jb51.net"
+//                vc.url = "https://www.jb51.net"
+                vc.url = "https://ke.qq.com"
             } else if stackView.restorationIdentifier == "xuexi" {
                 vc.url = "http://www.xuexi365.com"
             } else if stackView.restorationIdentifier == "maizi" {
                 vc.url = "https://study.163.com/provider/470451/index.htm"
             } else if stackView.restorationIdentifier == "jike" {
-                vc.url = "https://www.jikexueyuan.com"
+//                vc.url = "https://www.jikexueyuan.com"
+                vc.url = "https://study.163.com"
             }
             
             vc.modalPresentationStyle = .fullScreen
