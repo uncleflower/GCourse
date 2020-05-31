@@ -57,14 +57,7 @@ class ChangePwdViewController: UIViewController {
         
         users = realm.objects(User.self).filter("account == \(status![0].currentAccount)")
         
-        do {
-            try realm.write {
-                users![0].password = newPassword
-                print("success")
-            }
-        } catch {
-            print(error)
-        }
+        updatePassword(user: users![0], newPassword: newPassword)
         
         dismiss(animated: true, completion: nil)
     }

@@ -9,4 +9,6 @@ target 'OnlineStudying' do
   pod 'Alamofire', '~> 5.0'
   pod 'Realm'
   pod 'RealmSwift'
+  pod 'LeanCloud/Foundation'
+  pod 'SwiftyJSON'
 end

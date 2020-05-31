@@ -26,6 +26,7 @@
 		406D833C24120B2F002EDDC1 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D833B24120B2F002EDDC1 /* UserViewController.swift */; };
 		4075F5F724121FA000E8845A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4075F5F624121FA000E8845A /* LogInViewController.swift */; };
 		4088D16A2456BF2A00C9360B /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4088D1692456BF2A00C9360B /* constant.swift */; };
+		409031DD24839FA600EAC665 /* LeanCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409031DC24839FA600EAC665 /* LeanCloud.swift */; };
 		40CD1278246FD2DA00E559E2 /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40CD1277246FD2DA00E559E2 /* head.jpg */; };
 		40CD127A246FF34E00E559E2 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CD1279246FF34E00E559E2 /* Realm.swift */; };
 		40DA18B6247D070300C55E83 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA18B5247D070300C55E83 /* SignUpViewController.swift */; };
@@ -58,6 +59,7 @@
 		406D833B24120B2F002EDDC1 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		4075F5F624121FA000E8845A /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		4088D1692456BF2A00C9360B /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
+		409031DC24839FA600EAC665 /* LeanCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanCloud.swift; sourceTree = "<group>"; };
 		40CD1277246FD2DA00E559E2 /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
 		40CD1279246FF34E00E559E2 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		40DA18B5247D070300C55E83 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				406D83372411FF24002EDDC1 /* Course.swift */,
 				40DA18B7247D46CE00C55E83 /* Status.swift */,
 				40CD1279246FF34E00E559E2 /* Realm.swift */,
+				409031DC24839FA600EAC665 /* LeanCloud.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,21 +287,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OnlineStudying/Pods-OnlineStudying-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineStudying/Pods-OnlineStudying-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineStudying/Pods-OnlineStudying-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnlineStudying/Pods-OnlineStudying-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineStudying/Pods-OnlineStudying-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEFC0DFA39CF2AE80A1D10D8 /* [CP] Check Pods Manifest.lock */ = {
@@ -344,6 +342,7 @@
 				40E33AC3242DFF220042B35E /* StudyCenterViewController.swift in Sources */,
 				406D831A2411FCAC002EDDC1 /* AppDelegate.swift in Sources */,
 				404BD677241A326F001219F2 /* PageViewController.swift in Sources */,
+				409031DD24839FA600EAC665 /* LeanCloud.swift in Sources */,
 				406D83382411FF24002EDDC1 /* Course.swift in Sources */,
 				406D831C2411FCAC002EDDC1 /* SceneDelegate.swift in Sources */,
 			);

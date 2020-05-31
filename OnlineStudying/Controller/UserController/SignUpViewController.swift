@@ -90,8 +90,10 @@ class SignUpViewController: UIViewController {
         }
         
         let isAccountExist = realm.objects(User.self).filter("account = \(account)")
+        queriedUser.account = 0
+        LCQueryUser(account: Int(account) ?? -1)
         
-        guard isAccountExist.count == 0 else {
+        guard isAccountExist.count == 0 && queriedUser.account == 0 else {
             let alert = UIAlertController(title: "错误", message: "账号重复，请设置其他账号", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "好的", style: .destructive, handler: nil))
             present(alert, animated: true, completion: nil)

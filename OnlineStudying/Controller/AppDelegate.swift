@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import RealmSwift
-import Alamofire
+import LeanCloud
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,20 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let urlStr = ""
-//
-//        AF.request(urlStr).responseJSON { (response) in
-//            switch response.result {
-//            case .success(let json):
-//                print(json)
-//                break
-//            case .failure(let error):
-//                print("error:\(error)")
-//                break
-//            }
-//        }
+        //
+        creatConnection()
+        
+//        let testUser = LCQueryUser(account: 1111)
+//        print("#### \(testUser.account)")
+
+        
+        LCApplication.logLevel = .all
+        
         
         print(Realm.Configuration.defaultConfiguration.fileURL)
+        
         users = realm.objects(User.self)
         status = realm.objects(Status.self)
         

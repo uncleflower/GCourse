@@ -1,27 +1,37 @@
 PODS:
   - Alamofire (5.0.2)
+  - LeanCloud/Foundation (17.5.5):
+    - Alamofire (~> 5.0)
   - Realm (5.0.0):
     - Realm/Headers (= 5.0.0)
   - Realm/Headers (5.0.0)
   - RealmSwift (5.0.0):
     - Realm (= 5.0.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
+  - LeanCloud/Foundation
   - Realm
   - RealmSwift
+  - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - LeanCloud
     - Realm
     - RealmSwift
+  trunk:
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  LeanCloud: efbefbbc19c58ff6133a54a0d4980b844482f816
   Realm: 76066d333de26f97e9caedaa85ee3ff4a62ca265
   RealmSwift: c1bdff09b422569dc6881410d9ccf712bcdb79b0
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: bbee82b89dc0886e6cc44846481c0cf153ea4934
+PODFILE CHECKSUM: c66c822b0341a7fa793f19a0afe282e1f7c6337d
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.9.1

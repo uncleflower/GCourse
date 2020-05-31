@@ -84,13 +84,9 @@ class CourseViewController: UITableViewController {
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        do {
-            try realm.write {
-                realm.delete(collections![indexPath.row])
-            }
-        } catch {
-            print(error)
-        }
+        
+        deleteCourse(course: collections![indexPath.row])
+        
         tableView.reloadData()
     }
     
@@ -159,13 +155,9 @@ extension CourseViewController:UISearchBarDelegate,UIGestureRecognizerDelegate {
                                 error.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
                                 self.present(error, animated: true, completion: nil)
                             } else {
-                                do {
-                                    try realm.write {
-                                        collections![pressIndexPath.row].courseName = textField.text!
-                                    }
-                                } catch {
-                                    print(error)
-                                }
+                                
+                                updateCourseName(row: pressIndexPath.row, name: textField.text!)
+
                                 pressCell.courseNameLabel.text = textField.text
                             }
                         }
