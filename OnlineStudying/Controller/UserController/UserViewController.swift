@@ -79,6 +79,20 @@ class UserViewController: UITableViewController {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         }
+        
+        if indexPath.section == 1 && indexPath.row == 2 {
+            guard status![0].isLoggedIn == true else {
+                let alert = UIAlertController(title: "登录", message: "您还没登录呢", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+            let vc = sb.instantiateViewController(identifier: "changePwd") as! ChangePwdViewController
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
     }
     
 

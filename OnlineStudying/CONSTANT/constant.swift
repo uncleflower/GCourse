@@ -24,12 +24,3 @@ var status:Results<Status>?
 
 
 
-
-extension String {
-    var isBlank:Bool {
-        let trimmedStr = self.trimmingCharacters(in: .whitespacesAndNewlines)
-        return trimmedStr.isEmpty
-    }
-}
-
-

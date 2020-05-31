@@ -111,8 +111,6 @@ class CourseWebController: UIViewController {
             print("urlStr" + self.urlStr)
             
             
-            
-            
         }
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         
