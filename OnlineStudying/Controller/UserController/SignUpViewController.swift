@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import LeanCloud
 
 class SignUpViewController: UIViewController {
-
+    
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -89,11 +90,11 @@ class SignUpViewController: UIViewController {
             return
         }
         
+        let isExistInLC = LCQueryUser(account: Int(account) ?? -1)
+
         let isAccountExist = realm.objects(User.self).filter("account = \(account)")
-        queriedUser.account = 0
-        LCQueryUser(account: Int(account) ?? -1)
         
-        guard isAccountExist.count == 0 && queriedUser.account == 0 else {
+        guard isAccountExist.count == 0 && isExistInLC == 0 else {
             let alert = UIAlertController(title: "错误", message: "账号重复，请设置其他账号", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "好的", style: .destructive, handler: nil))
             present(alert, animated: true, completion: nil)
@@ -106,6 +107,7 @@ class SignUpViewController: UIViewController {
         newUser.password = password
         
         saveUser(user: newUser)
+        LCSaveUser(LCUser: newUser)
         
         let alert = UIAlertController(title: "成功", message: "注册成功！", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "好的", style: .default, handler: { (_) in
@@ -132,3 +134,4 @@ class SignUpViewController: UIViewController {
     */
 
 }
+

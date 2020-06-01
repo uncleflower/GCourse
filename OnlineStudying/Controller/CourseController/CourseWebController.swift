@@ -105,6 +105,7 @@ class CourseWebController: UIViewController {
                 
                 // 本地数据存储
                 saveCourse(course: course)
+                LCSaveCourse(LCCourse: course)
             }
             
 

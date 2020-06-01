@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
+import LeanCloud
+
+protocol ChangeUsernameDeletage {
+    func didChangeUsername(username:String)
+}
 
 class LogInViewController: UIViewController {
-
+    
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var iconImage = UIImageView()
+    
+    var deletage: ChangeUsernameDeletage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +29,12 @@ class LogInViewController: UIViewController {
         
         setIconImage()
     }
+    
     @objc func dismissKeyboard() {
         self.accountTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
     }
+    
     @IBAction func logInButton(_ sender: UIButton) {
         
         let account = accountTextField.text ?? " "
@@ -43,48 +53,43 @@ class LogInViewController: UIViewController {
             return
         }
         
-        users = realm.objects(User.self).filter("account = \(account)")
+        let isExistInLC = LCQueryUser(account: Int(account) ?? -1,password: password)
         
-        guard users?.count != 0 else {
-            let alert = UIAlertController(title: "错误", message: "账号不存在", preferredStyle: .alert)
+
+//        users = realm.objects(User.self).filter("account = \(account)")
+        
+        guard isExistInLC != 0 else {
+            let alert = UIAlertController(title: "错误", message: "账号或密码错误", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "好的", style: .destructive, handler: nil))
             present(alert, animated: true, completion: nil)
             return
         }
         
-        guard users![0].password == password else {
-            let alert = UIAlertController(title: "错误", message: "密码错误", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "好的", style: .destructive, handler: nil))
-            present(alert, animated: true, completion: nil)
-            return
-        }
-        
-        user = users![0]
+//        user = users![0]
         
         do {
             try realm.write {
                 status![0].isLoggedIn = true
-                status![0].currentAccount = user.account
+                status![0].currentAccount = Int(account)!
             }
         } catch {
             print(error)
         }
         
-        collections = realm.objects(Course.self).filter("account = \(status![0].currentAccount)")
+        LCQueryCourse(account: Int(account) ?? -1 )
+        collections = realm.objects(Course.self).filter("account = \(account)")
         
-        self.dismiss(animated: true, completion: nil)
         
-        //测试账号
-        if accountTextField.text == "123456" && passwordTextField.text == "123456"{
-            status![0].isLoggedIn = true
-            user.userName = "用户1"
-//            headImage = UIImage(named: "head.jpg")!
-            let alert = UIAlertController(title: "成功", message: "登录成功", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { (_) in
-                self.dismiss(animated: true, completion: nil)
-            }))
-            present(alert, animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            
+            if status![0].isLoggedIn == true {
+                users = realm.objects(User.self).filter("account = \(status![0].currentAccount)")
+                user = users![0]
+                
+                self.deletage?.didChangeUsername(username: user.userName)
+            }
         }
+        
     }
     
     @IBAction func disMissButton(_ sender: UIButton) {

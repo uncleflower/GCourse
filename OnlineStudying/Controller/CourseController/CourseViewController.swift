@@ -85,6 +85,7 @@ class CourseViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
+        LCDeleteCourse(course: collections![indexPath.row])
         deleteCourse(course: collections![indexPath.row])
         
         tableView.reloadData()
@@ -124,14 +125,14 @@ class CourseViewController: UITableViewController {
 extension CourseViewController:UISearchBarDelegate,UIGestureRecognizerDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        collections = realm.objects(Course.self).filter("courseName CONTAINS %@ AND account = \(status![0].currentAccount)",searchBar.text!).sorted(byKeyPath: "createdAT", ascending: false)
+        collections = realm.objects(Course.self).filter("account = \(status![0].currentAccount) AND courseName CONTAINS %@",searchBar.text!).sorted(byKeyPath: "createdAT", ascending: false)
 
         tableView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text!.isEmpty {
-            collections = realm.objects(Course.self)
+            collections = realm.objects(Course.self).filter("account = \(status![0].currentAccount)").sorted(byKeyPath: "createdAT", ascending: false)
             tableView.reloadData()
             
             DispatchQueue.main.async {

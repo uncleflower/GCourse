@@ -7,7 +7,6 @@ func saveCourse(course:Course) {
     do {
         try realm.write {
             realm.add(course)
-            LCSaveCourse(LCCourse: course)
         }
     } catch {
         print(error)
@@ -17,7 +16,6 @@ func saveCourse(course:Course) {
 func deleteCourse(course:Course) {
     do {
         try realm.write {
-            LCDeleteCourse(course: course)
             realm.delete(course)
         }
     } catch {
@@ -29,7 +27,6 @@ func saveUser(user:User) {
     do {
         try realm.write {
             realm.add(user)
-            LCSaveUser(LCUser: user)
         }
     } catch {
         print(error)

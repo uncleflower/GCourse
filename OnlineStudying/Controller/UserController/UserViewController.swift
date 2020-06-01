@@ -7,20 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class UserViewController: UITableViewController {
     @IBOutlet weak var headPortraitImage: UIImageView!
     
     @IBOutlet weak var userNameLabel: UILabel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        headPortraitImage.image = headImage
-        userNameLabel.text = user.userName
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        
         headPortraitImage.image = headImage
         userNameLabel.text = user.userName
     }
@@ -77,6 +73,8 @@ class UserViewController: UITableViewController {
             let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
             let vc = sb.instantiateViewController(identifier: "logIn") as! LogInViewController
             vc.modalPresentationStyle = .fullScreen
+            
+            vc.deletage = self
             present(vc, animated: true, completion: nil)
         }
         
@@ -131,14 +129,21 @@ class UserViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
+    
+   /*
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
+   */
+}
 
+extension UserViewController:ChangeUsernameDeletage {
+    func didChangeUsername(username: String) {
+        userNameLabel.text = username
+    }
+    
 }

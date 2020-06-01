@@ -20,9 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //
         creatConnection()
-        
-//        let testUser = LCQueryUser(account: 1111)
-//        print("#### \(testUser.account)")
 
         
         LCApplication.logLevel = .all
