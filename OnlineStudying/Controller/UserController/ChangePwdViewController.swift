@@ -17,8 +17,15 @@ class ChangePwdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.oldPwd.resignFirstResponder()
+        self.newPwd.resignFirstResponder()
+        self.confirmPwd.resignFirstResponder()
     }
     
     
